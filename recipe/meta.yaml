@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/researchpy-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: e2afb45097dce2cc1da391ac9c7803015287632255fa56bf413a23984aa70399
 
 build:
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
   number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
   host:
-    - python >=3.7
+    - python
     - setuptools >=61.0
     - pip
+    - wheel
   run:
-    - python >=3.7
+    - python
     - scipy
     - numpy
     - pandas
@@ -30,16 +30,24 @@ requirements:
 test:
   imports:
     - researchpy
-  commands:
-    - pip check
   requires:
     - pip
+  commands:
+    - pip check
 
 about:
   home: https://github.com/researchpy/researchpy
-  summary: Researchpy produces Pandas DataFrames that contain relevant statistical testing information that is commonly required for academic research.
-  license: BSD-3-Clause
+  license: MIT License
+  license_family: MIT
   license_file: LICENSE.txt
+  summary: Researchpy produces Pandas DataFrames that contain relevant statistical testing information that is commonly required for academic research.
+  description: |
+    researchpy produces Pandas DataFrames that contain relevant statistical testing
+    information that is commonly required for academic research. The information is
+    returned as Pandas DataFrames to make for quick and easy exporting of results to
+    any format/method that works with the traditional Pandas DataFrame.
+  doc_url: https://github.com/researchpy/documentation
+  dev_url: https://github.com/researchpy/researchpy
 
 extra:
   recipe-maintainers:
