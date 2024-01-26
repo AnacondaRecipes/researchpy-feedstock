@@ -37,7 +37,7 @@ test:
 
 about:
   home: https://github.com/researchpy/researchpy
-  license: MIT License
+  license: MIT
   license_family: MIT
   license_file: LICENSE.txt
   summary: Researchpy produces Pandas DataFrames that contain relevant statistical testing information that is commonly required for academic research.
