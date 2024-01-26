@@ -46,7 +46,7 @@ about:
     information that is commonly required for academic research. The information is
     returned as Pandas DataFrames to make for quick and easy exporting of results to
     any format/method that works with the traditional Pandas DataFrame.
-  doc_url: https://github.com/researchpy/documentation
+  doc_url: https://researchpy.readthedocs.io
   dev_url: https://github.com/researchpy/researchpy
 
 extra:
